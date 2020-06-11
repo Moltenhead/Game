@@ -1,0 +1,54 @@
+2020-05-25 22:01:36,362: Running Lutris 0.5.6
+2020-05-25 22:01:36,403: Using Intel Open Source Technology Center
+2020-05-25 22:01:36,403: Running Mesa driver 19.2.8 on Mesa DRI Intel(R) UHD Graphics (Whiskey Lake 3x8 GT2)  (0x3ea0)
+2020-05-25 22:01:36,403: GPU: 8086:3EA0 1028:08CD using i915 drivers
+2020-05-25 22:01:37,543: Vulkan is supported
+2020-05-25 22:01:37,565: Updating DXVK versions
+2020-05-25 22:01:51,190: Replacing /home/oem/Games/league-of-legends/drive_c/windows/system32/dxgi with DXVK version
+2020-05-25 22:01:51,244: Replacing /home/oem/Games/league-of-legends/drive_c/windows/system32/d3d11 with DXVK version
+2020-05-25 22:01:51,280: Replacing /home/oem/Games/league-of-legends/drive_c/windows/system32/d3d10core with DXVK version
+2020-05-25 22:01:51,305: Replacing /home/oem/Games/league-of-legends/drive_c/windows/system32/d3d9 with DXVK version
+2020-05-25 22:01:51,550: Running /home/oem/Games/league-of-legends/syscall_check.sh in the background
+Running /home/oem/Games/league-of-legends/syscall_check.sh
+Running /home/oem/.local/share/lutris/runners/wine/lutris-lol-5.5-2-x86_64/bin/wine /home/oem/Games/league-of-legends/drive_c/Riot Games/League of Legends/LeagueClient.exe
+Initial process has started with pid 13831
+Game is considered started.
+Initial process has started with pid 13830
+Game is considered started.
+Game is considered exited.
+Initial process has exited.
+All children have exited.
+Exit with returncode 0
+esync: up and running.
+000000.048|   OKAY| Running from cwd 'C:\Riot Games\League of Legends'.
+000000.048| ALWAYS| Application Version:10.10.320.3039 - CL:3203039 - Build Date:May 07 2020 - Build Time:17:24:02
+000000.048|   OKAY| Initial working directory: "C:\Riot Games\League of Legends"
+000000.048|   OKAY| Current process: "C:\Riot Games\League of Legends\LeagueClient.exe"
+000000.048|   OKAY| Command line arguments:
+000000.098| ALWAYS| The following message is prepared to be sent to dradis:
+Event Name: riot__rclient__event
+common.os_platform: Windows
+common.application_name: LeagueClient
+common.application_version: 10.10.320.3039
+common.cef_version: 74.1.19+gb62bacf+chromium-74.0.3729.157
+common.installation_id: BshQeg==
+common.locale: fr_FR
+common.os_version_major: 10
+common.machine_id: hCJwIbRqjUSb3RKtZw5UAA==
+common.os_edition: Ultimate N, x86
+common.os_version_minor: 
+common.region: EUW
+common.session_id: 88af2b26-3b27-2844-ab90-9a8ea472e81c
+event_name: startup
+crash_reporter: crashpad
+000000.099| ALWAYS| Queued Dradis event to be sent.
+000000.099| ALWAYS| Direct Launch enabled for league_of_legends.live in environment 'live' for app path 'C:\Riot Games\League of Legends\LeagueClient.exe' and install dir 'C:\Riot Games\League of Legends'
+000000.148| ALWAYS| Found associated Riot Client install (C:/Riot Games/Riot Client/RiotClientServices.exe)
+000000.277|   OKAY| Launched Riot Client with process 65
+000000.277| ALWAYS| Riot Client started. Exiting with the expectation of being restarted (ExitForDirectLaunch).
+000005.882|   OKAY| EventCollector: 0 events remaining after thread join
+000005.882|   OKAY| Shut down EventCollector in 800 milliseconds
+Initial process has exited.
+wineserver crashed, please enable coredumps (ulimit -c unlimited) and restart.
+Gdk-Message: 01:01:00.711: lutris: Fatal IO error 11 (Ressource temporairement non disponible) on X server :0.
+

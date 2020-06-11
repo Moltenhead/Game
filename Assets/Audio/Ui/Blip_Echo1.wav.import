@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Blip_Echo1.wav-9a7b7576c482571d66f88339e4dbed4c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Ui/Blip_Echo1.wav"
+dest_files=[ "res://.import/Blip_Echo1.wav-9a7b7576c482571d66f88339e4dbed4c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

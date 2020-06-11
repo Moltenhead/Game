@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Scripts/Objects/Obj_AudioManager.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Ui/Blip_Select1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Ui/Blip_Select3.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Ui/Blip_Select6.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Ui/Blip_Select2.wav" type="AudioStream" id=5]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Ui" type="Node" parent="."]
+
+[node name="UiMain" type="Node" parent="Ui"]
+
+[node name="Move" type="AudioStreamPlayer" parent="Ui/UiMain"]
+stream = ExtResource( 4 )
+volume_db = -30.0
+
+[node name="SubMove" type="AudioStreamPlayer" parent="Ui/UiMain"]
+stream = ExtResource( 2 )
+volume_db = -20.0
+
+[node name="Validate" type="AudioStreamPlayer" parent="Ui/UiMain"]
+stream = ExtResource( 3 )
+volume_db = -20.0
+
+[node name="Out" type="AudioStreamPlayer" parent="Ui/UiMain"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="Quit" type="AudioStreamPlayer" parent="Ui/UiMain"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="Char" type="Node" parent="."]

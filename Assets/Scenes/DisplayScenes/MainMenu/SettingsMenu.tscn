@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scenes/Core/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Core/BaseNavigationMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ReturnToMainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scenes/Core/OptionSelector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ValidOption.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scripts/Actions/ButtonAfterActions/Baa_ChangeLocale.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Scripts/Objects/Obj_SettingsMenu.gd" type="Script" id=7]
+
+[node name="SettingsMenu" type="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1000.0
+margin_bottom = 580.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+action_script = ExtResource( 3 )
+
+[node name="BaseNavigationMenu" parent="." instance=ExtResource( 2 )]
+margin_right = 980.0
+margin_bottom = 560.0
+alignment = 1
+initial_focus = NodePath("../../SettingsMenu/BaseNavigationMenu/Btn_Controls")
+
+[node name="Btn_Controls" parent="BaseNavigationMenu" instance=ExtResource( 1 )]
+margin_top = 224.0
+margin_right = 980.0
+margin_bottom = 244.0
+focus_neighbour_top = NodePath("../Btn_Back")
+focus_neighbour_bottom = NodePath("../OptionSelector/OptionsList")
+text = "MS0"
+string_id = "MS0"
+
+[node name="OptionSelector" parent="BaseNavigationMenu" instance=ExtResource( 4 )]
+margin_top = 248.0
+margin_right = 980.0
+margin_bottom = 311.0
+title_id = "MS1"
+options_labels = [ "LANGEN0", "LANGFR0", "LANGFR1" ]
+options_icons = [ null, null, null ]
+options_metas = [ "en", "fr", "fr_FR" ]
+
+[node name="Label" parent="BaseNavigationMenu/OptionSelector" index="0"]
+margin_right = 27.0
+margin_bottom = 63.0
+text = "MS1"
+
+[node name="OptionsList" parent="BaseNavigationMenu/OptionSelector" index="1"]
+margin_left = 31.0
+margin_right = 936.0
+margin_bottom = 63.0
+focus_neighbour_left = NodePath("../../Btn_Controls")
+items = [ "LANGEN0", null, false, "LANGFR0", null, false, "LANGFR1", null, false ]
+
+[node name="Button" parent="BaseNavigationMenu/OptionSelector" index="2"]
+margin_left = 940.0
+margin_right = 980.0
+margin_bottom = 63.0
+
+[node name="Action" parent="BaseNavigationMenu/OptionSelector/Button" index="0"]
+script = ExtResource( 5 )
+after_validate_action = ExtResource( 6 )
+
+[node name="Btn_Back" parent="BaseNavigationMenu" instance=ExtResource( 1 )]
+margin_top = 315.0
+margin_right = 980.0
+margin_bottom = 335.0
+focus_neighbour_top = NodePath("../OptionSelector/OptionsList")
+focus_neighbour_bottom = NodePath("../Btn_Controls")
+text = "MB0"
+string_id = "MB0"
+type = 2
+
+[node name="Action" parent="BaseNavigationMenu/Btn_Back" index="0"]
+script = ExtResource( 3 )
+[connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/Btn_Controls" method="update_text"]
+[connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/OptionSelector" method="update_display"]
+[connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/Btn_Back" method="update_text"]
+
+[editable path="BaseNavigationMenu"]
+
+[editable path="BaseNavigationMenu/Btn_Controls"]
+
+[editable path="BaseNavigationMenu/OptionSelector"]
+
+[editable path="BaseNavigationMenu/OptionSelector/Button"]
+
+[editable path="BaseNavigationMenu/Btn_Back"]
