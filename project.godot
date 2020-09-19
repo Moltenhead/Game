@@ -16,12 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Game"
-run/main_scene="res://Assets/Scenes/DisplayScenes/MainMenu/MainMenu.tscn"
+run/main_scene="res://Assets/Scenes/Core/OpeningLoadingScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+SceneManager="*res://Assets/Scenes/Core/SceneManager.tscn"
 AudioManager="*res://Assets/Scenes/Core/AudioManager.tscn"
+KeyBindings="*res://Assets/Scenes/Core/KeyBindings.tscn"
 
 [input]
 

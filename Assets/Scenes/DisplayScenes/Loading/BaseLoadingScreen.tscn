@@ -1,31 +1,53 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://Assets/Scripts/Objects/BaseLoadingScreen.gd" type="Script" id=1]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="ImageTexture" id=2]
+
+[sub_resource type="QuadMesh" id=3]
+
+[sub_resource type="MeshTexture" id=4]
+mesh = SubResource( 3 )
+base_texture = SubResource( 2 )
+
+[node name="BaseLoadingScreen" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
-margin_left = 19.0
-margin_top = 10.0
-margin_right = 20.0
+margin_top = 11.0
+margin_right = 61.0
 margin_bottom = 29.0
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
-margin_right = 1.0
+margin_right = 61.0
 margin_bottom = 14.0
+text = "Loading..."
 
 [node name="TextureProgress" type="TextureProgress" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 1.0
-margin_bottom = 19.0
+margin_right = 61.0
+margin_bottom = 18.0
+texture_under = SubResource( 1 )
+texture_progress = SubResource( 4 )

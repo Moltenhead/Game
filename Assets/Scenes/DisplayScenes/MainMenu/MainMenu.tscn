@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scenes/Core/BaseNavigationMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Core/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ExitGame.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ChangeScene.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Scenes/DisplayScenes/Levels/Level_0_1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Scenes/DisplayScenes/MainMenu/SettingsMenu.tscn" type="PackedScene" id=6]
 
 [node name="MainMenu" type="MarginContainer"]
 margin_left = 20.0
@@ -22,6 +20,9 @@ margin_bottom = 560.0
 alignment = 1
 initial_focus = NodePath("Btn_NewGame")
 
+[node name="EscapeAction" parent="BaseNavigationMenu" index="0"]
+script = ExtResource( 3 )
+
 [node name="Btn_NewGame" parent="BaseNavigationMenu" instance=ExtResource( 2 )]
 margin_top = 246.0
 margin_right = 980.0
@@ -33,7 +34,6 @@ string_id = "MM0"
 
 [node name="Action" parent="BaseNavigationMenu/Btn_NewGame" index="0"]
 script = ExtResource( 4 )
-scene_target = ExtResource( 5 )
 
 [node name="Btn_Settings" parent="BaseNavigationMenu" instance=ExtResource( 2 )]
 margin_top = 270.0
@@ -44,7 +44,7 @@ string_id = "MM1"
 
 [node name="Action" parent="BaseNavigationMenu/Btn_Settings" index="0"]
 script = ExtResource( 4 )
-scene_target = ExtResource( 6 )
+scene_target = "res://Assets/Scenes/DisplayScenes/MainMenu/SettingsMenu.tscn"
 
 [node name="Btn_Exit" parent="BaseNavigationMenu" instance=ExtResource( 2 )]
 margin_top = 294.0

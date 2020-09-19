@@ -2,6 +2,10 @@ extends "res://Assets/Scripts/Objects/Obj_NavigationMenu.gd"
 const OptionSelector = preload("res://Assets/Scripts/Objects/Obj_OptionSelector.gd")
 const OptionSelector_OptionsList = preload("res://Assets/Scripts/Objects/Obj_OptionSelector_OptionsList.gd")
 
+onready var EscapeAction = $EscapeAction
+
+var has_escape_action
+var escape_action
 var already_moved = false
 
 func _play_navigation_sound(node = null):
@@ -31,6 +35,7 @@ func _button_assoc_sound(button):
 
 func _on_ready():
 	var _self = self
+	has_escape_action = true if EscapeAction && EscapeAction.get_script() != null else false
 	for node in get_children():
 		if node is Button:
 			_button_assoc_sound(node)
@@ -45,3 +50,7 @@ func _on_ready():
 
 func _ready():
 	_on_ready()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel") && has_escape_action:
+		EscapeAction._execute()

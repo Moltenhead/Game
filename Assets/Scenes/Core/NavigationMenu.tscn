@@ -3,9 +3,4 @@
 [ext_resource path="res://Assets/Scripts/Objects/Obj_NavigationMenu.gd" type="Script" id=1]
 
 [node name="NavigationMenu" type="Node"]
-
 script = ExtResource( 1 )
-navigation_controls_script = null
-initial_index = 0
-
-
