@@ -67,5 +67,5 @@ ui_down={
 
 [locale]
 
-translations=PoolStringArray( "res://Assets/Localisations/languages.en.translation", "res://Assets/Localisations/languages.fr.translation", "res://Assets/Localisations/languages.fr_FR.translation", "res://Assets/Localisations/menu_options.en.translation", "res://Assets/Localisations/menu_options.fr.translation", "res://Assets/Localisations/menu_options.fr_FR.translation" )
+translations=PoolStringArray( "res://Assets/Localisations/languages.en.translation", "res://Assets/Localisations/languages.fr.translation", "res://Assets/Localisations/languages.fr_FR.translation", "res://Assets/Localisations/menu_options.en.translation", "res://Assets/Localisations/menu_options.fr.translation", "res://Assets/Localisations/menu_options.fr_FR.translation", "res://Assets/Localisations/key_actions.en.translation", "res://Assets/Localisations/key_actions.fr.translation", "res://Assets/Localisations/key_actions.fr_FR.translation" )
 locale_filter=[ 1, [ "en", "fr" ] ]
