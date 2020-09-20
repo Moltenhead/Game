@@ -37,7 +37,3 @@ func _process(delta):
 	if Engine.editor_hint:
 		if actual_string_id != string_id:
 			update_text()
-
-
-func update_texte():
-	pass # Replace with function body.
