@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Assets/Localisations/key_actions.en.translation", "res://Assets/Localisations/key_actions.fr.translation", "res://Assets/Localisations/key_actions.fr_FR.translation" ]
+
+source_file="res://Assets/Localisations/key_actions.csv"
+dest_files=[ "res://Assets/Localisations/key_actions.en.translation", "res://Assets/Localisations/key_actions.fr.translation", "res://Assets/Localisations/key_actions.fr_FR.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
