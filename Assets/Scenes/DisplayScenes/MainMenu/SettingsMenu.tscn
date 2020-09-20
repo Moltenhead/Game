@@ -82,9 +82,9 @@ type = 2
 [node name="Action" parent="BaseNavigationMenu/Btn_Back" index="0"]
 script = ExtResource( 2 )
 scene_target = "res://Assets/Scenes/DisplayScenes/MainMenu/MainMenu.tscn"
+[connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/Btn_Controls" method="update_text"]
 [connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/OptionSelector" method="update_display"]
 [connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/Btn_Back" method="update_text"]
-[connection signal="locale_changed" from="BaseNavigationMenu/OptionSelector/Button/Action" to="BaseNavigationMenu/Btn_Controls" method="update_text"]
 
 [editable path="BaseNavigationMenu"]
 
