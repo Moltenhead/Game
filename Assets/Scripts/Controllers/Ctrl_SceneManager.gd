@@ -5,8 +5,8 @@ var queue
 
 const BaseScenePath = "res://Assets/Scenes/DisplayScenes/MainMenu/MainMenu.tscn"
 
-const MainLoadingScene = preload("res://Assets/Scenes/DisplayScenes/Loading/BaseLoadingScreen.tscn")
-const SubLoadingScene = preload("res://Assets/Scenes/DisplayScenes/Loading/BaseLoadingScreen.tscn")
+const MainLoadingScene = preload("res://Assets/Scenes/DisplayScenes/Loading/BaseLoadingScreen_test.tscn")
+const SubLoadingScene = preload("res://Assets/Scenes/DisplayScenes/Loading/BaseLoadingScreen_test.tscn")
 
 onready var LoadingScreenWrapper = $LoadingScreenWrapper
 onready var CurrentSceneWrapper = $CurrentSceneWrapper
