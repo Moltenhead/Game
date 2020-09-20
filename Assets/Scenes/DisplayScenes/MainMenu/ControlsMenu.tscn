@@ -1,40 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scenes/Core/BaseNavigationMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ChangeScene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/Core/ButtonWithState.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Core/Button.tscn" type="PackedScene" id=4]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends MarginContainer
-
-export(Script) var action_script = null
-
-var action = null
-
-func _ready():
-	action = action_script.new() if action_script != null else null
-
-func _process(delta):
-	if Input.is_action_just_pressed(\"ui_cancel\"):
-		action._execute(self)
-"
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Node
-
-func _execute(target = self):
-	SceneManager.goto_scene(\"res://Assets/Scenes/DisplayScenes/MainMenu/SettingsMenu.tscn\")
-"
-
 [node name="ControlsMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-action_script = SubResource( 2 )
 
 [node name="BaseNavigationMenu" parent="." instance=ExtResource( 1 )]
 margin_right = 1024.0
@@ -76,6 +52,19 @@ margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
+[node name="Button" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/UpEditButton" index="0"]
+margin_right = 52.0
+margin_bottom = 20.0
+text = "KEYUP"
+string_id = "KEYUP"
+
+[node name="VariableDisplayer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/UpEditButton" index="1"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 56.0
+margin_bottom = 17.0
+variable_name = "ui_up"
+
 [node name="LeftEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -84,6 +73,19 @@ margin_right = 59.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
+
+[node name="Button" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/LeftEditButton" index="0"]
+margin_right = 55.0
+margin_bottom = 20.0
+text = "KEYLFT"
+string_id = "KEYLFT"
+
+[node name="VariableDisplayer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/LeftEditButton" index="1"]
+margin_left = 59.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 17.0
+variable_name = "ui_left"
 
 [node name="RightKeyContainer" type="VBoxContainer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons"]
 margin_left = 71.0
@@ -100,6 +102,19 @@ margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
+[node name="Button" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/DownEditButton" index="0"]
+margin_right = 67.0
+margin_bottom = 20.0
+text = "KEYDWN"
+string_id = "KEYDWN"
+
+[node name="VariableDisplayer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/DownEditButton" index="1"]
+margin_left = 71.0
+margin_top = 3.0
+margin_right = 71.0
+margin_bottom = 17.0
+variable_name = "ui_down"
+
 [node name="RightEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -109,6 +124,19 @@ margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
+[node name="Button" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/RightEditButton" index="0"]
+margin_right = 59.0
+margin_bottom = 20.0
+text = "KEYRGT"
+string_id = "KEYRGT"
+
+[node name="VariableDisplayer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/RightEditButton" index="1"]
+margin_left = 63.0
+margin_top = 3.0
+margin_right = 63.0
+margin_bottom = 17.0
+variable_name = "ui_right"
+
 [node name="Btn_Back" parent="BaseNavigationMenu/CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 48.0
 margin_right = 142.0
@@ -117,3 +145,11 @@ text = "MB0"
 string_id = "MB0"
 
 [editable path="BaseNavigationMenu"]
+
+[editable path="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/UpEditButton"]
+
+[editable path="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer/LeftEditButton"]
+
+[editable path="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/DownEditButton"]
+
+[editable path="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer/RightEditButton"]
