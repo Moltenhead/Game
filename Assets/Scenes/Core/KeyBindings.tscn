@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/Scripts/Controllers/Ctrl_KeyBindings.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/Core/Modal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Scripts/Actions/ModalActions/HopIn/Ma_PopIn.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Scripts/Actions/ModalActions/HopOut/Ma_PopOut.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Scripts/Actions/ModalActions/OnInput/Ma_ChangeKeyBinding.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scripts/Actions/ModalActions/OnInput/Ma_ChangeKeyBinding.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Scripts/Actions/ModalActions/HopOut/Ma_PopOut.gd" type="Script" id=5]
 
 [node name="KeyBindings" type="Node"]
 script = ExtResource( 1 )
@@ -17,15 +17,19 @@ margin_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="OnInput" parent="Modal" index="2"]
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="HopOut" parent="Modal" index="3"]
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Popup" parent="Modal" index="4"]
 margin_left = 507.0
-margin_top = 296.0
+margin_top = 289.0
 margin_right = 515.0
-margin_bottom = 304.0
+margin_bottom = 311.0
+popup_exclusive = false
+
+[node name="Label" parent="Modal/Popup" index="0"]
+margin_right = 4.0
 
 [editable path="Modal"]

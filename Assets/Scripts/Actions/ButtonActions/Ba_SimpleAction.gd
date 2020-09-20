@@ -1,4 +1,4 @@
 extends Node
 
-func _ready():
-	
+func _execute():
+	KeyBindings.modal.activate()

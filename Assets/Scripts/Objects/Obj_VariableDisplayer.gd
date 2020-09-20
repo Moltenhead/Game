@@ -24,7 +24,7 @@ func _update_data():
 	update_value()
 
 func update_text():
-	true_string = str(variable_value)
+	true_string = RawArray([variable_value.unicode]).get_string_from_ascii()
 	print(true_string)
 	set_text(true_string)
 

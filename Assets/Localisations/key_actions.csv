@@ -1,4 +1,5 @@
 key,en,fr,fr_FR
+KEYBINDREQ,Type the key you want to bind to %s action,Tapez la touche qui sera associée à l'action %s,Tapez la touche qui sera associée à l'action %s
 KEYUP,up,haut,haut
 KEYLFT,left,gauche,gauche
 KEYDWN,down,bas,bas

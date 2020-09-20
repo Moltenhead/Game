@@ -21,8 +21,15 @@ __meta__ = {
 [node name="HopOut" type="Node" parent="."]
 
 [node name="Popup" type="PopupPanel" parent="."]
-margin_left = -4.0
-margin_top = -4.0
-margin_right = 4.0
-margin_bottom = 4.0
+visible = true
+margin_right = 8.0
+margin_bottom = 22.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 popup_exclusive = true
+
+[node name="Label" type="Label" parent="Popup"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 18.0

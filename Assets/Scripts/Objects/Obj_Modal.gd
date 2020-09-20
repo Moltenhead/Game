@@ -1,10 +1,11 @@
 extends CenterContainer
 
-onready var hop_in	= $HopIn
-onready var process = $Process
-onready var on_input = $OnInput
-onready var hop_out	= $HopOut
-onready var popup 	= $Popup
+onready var hop_in		= $HopIn
+onready var process 	= $Process
+onready var on_input 	= $OnInput
+onready var hop_out		= $HopOut
+onready var popup 		= $Popup
+onready var label		= $Popup/Label
 
 export(bool) var _active = false
 
@@ -19,8 +20,9 @@ func _hop_out():
 		return
 	hop_out._execute(self)
 
-func activate(param = null):
-	param = param
+func activate(given_param = null):
+	popup.update()
+	param = given_param
 	_active = true
 	_hop_in()
 func deactivate():
@@ -32,6 +34,9 @@ func toggle():
 	else:
 		_hop_in()
 	_active = !_active
+
+func set_popup_text(string):
+	label.set_text(string)
 
 func _on_ready():
 	activate() if _active else deactivate()
