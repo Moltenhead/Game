@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Scenes/Core/BaseNavigationMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ChangeScene.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Scenes/Core/BaseNavigationMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scripts/Actions/ButtonActions/Ba_ChangeScene.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scenes/Core/ButtonWithState.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Core/Button.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends MarginContainer
@@ -34,12 +36,84 @@ __meta__ = {
 }
 action_script = SubResource( 2 )
 
-[node name="BaseNavigationMenu" parent="." instance=ExtResource( 2 )]
+[node name="BaseNavigationMenu" parent="." instance=ExtResource( 1 )]
 margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="EscapeAction" parent="BaseNavigationMenu" index="0"]
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 scene_target = "res://Assets/Scenes/DisplayScenes/MainMenu/SettingsMenu.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="BaseNavigationMenu"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseNavigationMenu/CenterContainer"]
+margin_left = 441.0
+margin_top = 266.0
+margin_right = 583.0
+margin_bottom = 334.0
+
+[node name="VerticalEditButtons" type="HSplitContainer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer"]
+margin_right = 142.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftKeyContainer" type="VBoxContainer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons"]
+margin_right = 59.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UpEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 59.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="LeftEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/LeftKeyContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="RightKeyContainer" type="VBoxContainer" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons"]
+margin_left = 71.0
+margin_right = 142.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DownEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 71.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="RightEditButton" parent="BaseNavigationMenu/CenterContainer/VBoxContainer/VerticalEditButtons/RightKeyContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 71.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Btn_Back" parent="BaseNavigationMenu/CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 48.0
+margin_right = 142.0
+margin_bottom = 68.0
+text = "MB0"
+string_id = "MB0"
 
 [editable path="BaseNavigationMenu"]
