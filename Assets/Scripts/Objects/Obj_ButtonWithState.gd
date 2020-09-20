@@ -1,11 +1,7 @@
 extends HBoxContainer
 
 onready var Button 	= $Button
-onready var Label 	= $StateLabel
-
-export(String) var label_pointer
-
-var _text = ""
+onready var VariableDisplayer 	= $VariableDisplayer
 
 func _on_ready():
 	pass
